@@ -1,0 +1,8 @@
+# Ignore .env file
+.env
+
+# Ignore trekbytes_turbine folder
+trekbytes_turbine/
+
+# Ignore staticfiles folder
+staticfiles/

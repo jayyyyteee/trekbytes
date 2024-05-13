@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Seen From Above
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="all-posts" id="allposts">
+    <div class="row text-center mx-auto align-items-center">
+        
+        {% for post in all_posts %}
+        {% include "blog/includes/post.html" %}
+        {% endfor %}
+        
+    </div>
+</section>
+{% endblock %}

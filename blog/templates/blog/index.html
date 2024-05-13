@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+TrekBytes
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static "blog/index.css" %}">
+
+{% endblock %}
+{% block starting_page_header %}
+
+
+  <div class="container">
+    <div class="container text-white text-center">
+      <p>
+      
+    Welcome to TrekBytes!  This blog orginated as a way for me to learn how to build a web app from scratch and has since morphed into a memento
+  of my travels in between jobs.  Follow along as my girlfriend and I travel through South America and Europe.  Feel free to follow @trekbytes on Instagram as well for more short form content. </p>
+<br>
+  </div>
+ 
+      <div class="container">
+        
+        <h2 class="text-white text-center">Recent Posts</h2>
+        <div class="row text-center mx-auto align-items-center">
+          {% for post in posts %}
+              {% include "blog/includes/carousel.html" %}
+          {% endfor %}
+      </div>
+      </div>
+    </div>
+
+{% endblock %}
+{% block content %}
+
+<!-- Masthead-->
+
+<!-- About-->
+<section class="about-section text-center" id="about" style="position: relative;">
+    <div class="container px-4 px-lg-5" style="padding-bottom: 5rem;">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <h2 class="text-white">Destinations</h2>
+              <p class="text-white">Zoom in to see route taken!</p>
+                <div id="map" style="height: 30rem; width: 60rem; padding-bottom: 10px; border-radius: 25px; top: 0px;">
+                <script>
+                    function initMap() {
+                      const map = new google.maps.Map(document.getElementById('map'), {
+                        center: { lat: 0, lng: 0 }, // Set the initial center of the map
+                        zoom: 3, // Adjust the initial zoom level as needed
+                      });
+                  
+                      const travelCoordinates = [
+                        { lat: 34.052235, lng: -118.243683 }, //Los Angeles
+                        { lat: -34.603722, lng: -58.381592}, //Buenos Aires
+                        { lat: -25.695, lng: -54.4367}, //Iguazu Falls
+                        { lat: -50.338, lng: -72.264}, //El Calafate
+                        { lat: -49.3315, lng: -72.883}, //El Chalten 
+                        { lat: -51.443, lng: -73.100}, //Torres Del Paine
+                        { lat: -53.1634, lng: -70.903},  //Punta Arenas
+                        { lat: -16.5108, lng: -68.1275},  //La Paz
+                        { lat: -20.46, lng: -66.83}, //Uyuni
+                        { lat: -16.17, lng: -69.09}, //Copacabana
+                        { lat: -15.84, lng: -70.0129}, //Puno
+                        { lat: -13.52, lng: -71.98}, //Cusco
+                        { lat: -12.02, lng: -77.01}, //Lima
+                        { lat: -.1807, lng: -78.47} //Quito
+
+                        // Add more coordinates for your travel routes here
+                      ];
+                  
+                      const travelPath = new google.maps.Polyline({
+                        path: travelCoordinates,
+                        geodesic: true,
+                        strokeColor: '#FF0000', // Change the color as desired
+                        strokeOpacity: 1.0,
+                        strokeWeight: 2, // Adjust the thickness of the route line
+                      });
+                  
+                      travelPath.setMap(map);
+                  
+                      const bounds = new google.maps.LatLngBounds();
+                      for (const coord of travelCoordinates) {
+                        bounds.extend(coord);
+                        // Add a marker at each coordinate
+                        new google.maps.Marker({
+                          position: coord,
+                          map: map,
+                          title: 'Visited place', // You can set custom titles
+                          icon: {
+                            path: google.maps.SymbolPath.STAR, // Use a star symbol
+                            scale: 1, // Adjust the size of the star
+                            fillColor: 'yellow', // Set the color of the star
+                            strokeColor: 'gold', // Set the outline color of the star
+                            strokeWeight: 2 // Set the outline weight of the star
+                          }
+                        });
+                      }
+                      
+                      map.fitBounds(bounds);
+                    }
+                  </script>
+                  
+                  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBop6l15og1-6XxAc6AWHsKxoLgQ6rKyPE&callback=initMap" async defer></script>
+                  
+            
+        </div>
+      </div> 
+    </div>
+</section>
+
+<!-- Projects-->
+
+{% endblock %}

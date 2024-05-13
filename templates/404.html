@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+404 - Not Found
+{% endblock %}
+
+{% block css_files%}
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #282c35;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .emoji {
+        font-size: 6rem;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    a {
+        color: #61dafb;
+        text-decoration: none;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="emoji">😓</div>
+    <h1>Oops! Page Not Found</h1>
+    <p>It seems like you're lost in the digital wilderness.</p>
+    <p>Let's get you back on track. Go to the <a href="/">homepage</a>.</p>
+</div>
+{% endblock %}
+
