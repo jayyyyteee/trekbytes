@@ -6,3 +6,6 @@ trekbytes_turbine/
 
 # Ignore staticfiles folder
 staticfiles/
+
+# Ignore pycache
+__pycache__
