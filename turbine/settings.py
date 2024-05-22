@@ -152,3 +152,6 @@ STATICFILES_STORAGE = "custom_storages.StaticFileStorage"
 DEFAULT_FILE_STORAGE = "custom_storages.MediaFileStorage"
 STATICFILES_FOLDER = "static"
 MEDIAFILES_FOLDER = "media"
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
