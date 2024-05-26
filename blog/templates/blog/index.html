@@ -27,7 +27,10 @@ TrekBytes
           {% for post in posts %}
               {% include "blog/includes/carousel.html" %}
           {% endfor %}
-      </div>
+          <a class="text-white text-center" href="{% url 'post-page' %}">View All Posts</a>
+          
+        </div>
+        <br>
       </div>
     </div>
 
