@@ -37,16 +37,8 @@
                     <a class="nav-link" href="{% url 'post-page' %}">All Posts</a>
                 </li>
                 <!-- You may want to update the dropdown links as well, assuming you have corresponding views for these -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        More
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li class="dropdown-item">JTGPT - coming soon</li>
-                        <li class="dropdown-item">Bio and Projects</li>
-                        <!-- <li><a class="dropdown-item" href="{% url 'post-detail' slug='my-first-post' %}">My First Post</a></li> -->
-                        <!-- Add more dropdown links as needed -->
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about-me' %}">About Me</a> 
                 </li>
             </ul>
         </div>

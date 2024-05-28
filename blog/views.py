@@ -1,6 +1,6 @@
 from typing import Any
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import Post
 
 # Create your views here.
@@ -38,3 +38,6 @@ class SinglePostView(DetailView):
         context = super().get_context_data(**kwargs)
         context["post_tags"]=self.object.tags.all()
         return context
+
+class AboutMeView(TemplateView):
+    template_name = "blog/about-me.html"
