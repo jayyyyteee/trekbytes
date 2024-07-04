@@ -36,7 +36,13 @@ class Post(models.Model):
         Author, on_delete=models.SET_NULL, null=True, related_name="posts")
     tags = models.ManyToManyField(Tag)
 
-   
+class GeoLocation(models.Model):
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Latitude: {self.latitude}, Longitude: {self.longitude}, Timestamp: {self.timestamp}"
 
 
 
