@@ -33,7 +33,7 @@ SECRET_KEY = env("SECRET_KEY")
 # DEBUG = getenv("IS_DEVELOPMENT", True)
 DEBUG = True
 ALLOWED_HOSTS = [
-    getenv("APP_HOST"), '127.0.0.1'
+    getenv("APP_HOST"), '127.0.0.1', 'trekbytes.com', 'www.trekbytes.com',
 ]
 
 
@@ -152,4 +152,9 @@ STATICFILES_STORAGE = "custom_storages.StaticFileStorage"
 DEFAULT_FILE_STORAGE = "custom_storages.MediaFileStorage"
 STATICFILES_FOLDER = "static"
 MEDIAFILES_FOLDER = "media"
+CSRF_TRUSTED_ORIGINS = [
+    'https://trekbytes.com',
+    'https://www.trekbytes.com',
+]
+
 
