@@ -26,6 +26,10 @@ h4{
     word-spacing: 0.4vw;
 }
 
+.bold-text{
+  font-weight: bold;
+}
+
 h6{
     font-size: 0.9rem;
     font-weight: 700;
@@ -109,13 +113,6 @@ header .intro .card-img-top{
     position:relative;
 }
 
-.carousel-control-prev-icon {
-  background-image: url(data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E);
-}
-
-.carousel-control-next-icon {
-  background-image: url(data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E);
-}
 
 .carousel-control-prev,
 .carousel-control-next {
