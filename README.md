@@ -67,4 +67,3 @@ To get a local copy up and running, follow these steps:
 - **About Me**: Visit [http://127.0.0.1:8000/aboutme](http://_vscodecontentref_/2) to learn more about the author.
 - **Track Location**: Visit [http://127.0.0.1:8000/trackme](http://_vscodecontentref_/3) to track and display your location.
 
-## Project Structure
